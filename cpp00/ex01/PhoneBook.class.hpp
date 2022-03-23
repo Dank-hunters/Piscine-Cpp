@@ -9,20 +9,18 @@
 
 class PhoneBook
 {
-private:
-    int index;
+    private:
+       
+        int index;
+        Contact pers[8];
+    
      public:
     
-    Contact pers[8];
-    
-    void ask_fname(void);
-    void ask_lname(void);
-    void ask_nick(void);
-    void ask_numb(void);
-    void ask_darkest(void);
-    PhoneBook(z);
-    ~PhoneBook();
+        void    add();
+        void    aff();
+        PhoneBook();
+        ~PhoneBook();
 };
 
-#endif
 
+#endif

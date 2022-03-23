@@ -4,42 +4,41 @@
 Contact::Contact(void)
 {
 
-        std::cout << "constructor called" << std::endl;
+        std::cout << "constructor called1" << std::endl;
         return;        
 }
 
 
 Contact::~Contact(void)
 {
-        std::cout << "destructor called" << std::endl;
+        std::cout << "destructor called1" << std::endl;
         return;      
 }
 
-void    Contact::aff_fname() const
+void    Contact::setit(std::string info,int index)
 {
-        std::cout << "first name : " << this->firstname << std::endl;
+        this->data[index] = info;
         return;
 }
-void    Contact::aff_lname() const
+void    Contact::getit(int i)
 {
-        std::cout << "last name : " << this->lastname << std::endl;
-        return;
+        std::string tmp;
+
+        if (this->data[i].size() > 10)
+        {
+               // std::istringstream tmp(this->data[i]);
+                //tmp >> std::setw(10) >> news;
+                tmp = this->data[i];
+                tmp.resize(10);
+                std::cout << tmp;
+        }
+        else 
+         {      
+                std::cout << std::setw(10) << this->data[i];
+         }
+
 }
-void    Contact::aff_nick() const
-{
-        std::cout << "nickname : " << this->nickname << std::endl;
-        return;
-}
-void    Contact::aff_numb() const
-{
-        std::cout << "phone number: " << this->phonenumber << std::endl;
-        return;
-}
-void    Contact::aff_darkest() const
-{
-        std::cout << "darkest_secret : " << this->darkest_secret << std::endl;
-        return;
-}
+
 /*
 void    Contact::ask()
 {

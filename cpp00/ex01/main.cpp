@@ -2,22 +2,29 @@
 #include "PhoneBook.class.hpp"
 int main(int ac, char **av)
 {
-        std::string s1;
-        int i = 0;
+        std::string input;
         PhoneBook carnet;
-        while ()   
+        int index = 0;
+      
+        std::getline(std::cin, input);
+        while(input != "EXIT")
         {
-        carnet.ask_fname();
-        carnet.ask_lname();
-        carnet.ask_nick();
-        carnet.ask_numb();
-        carnet.ask_darkest();
-        }
-        
+                //std::cout << ""<< std::endl;
+                if (input == "ADD")
+                {
+                                carnet.add();
+                                //index++;
+                }
+                std::getline(std::cin, input);
+                if (input == "SEARCH")
+                {
+                        //std::cout << "who are you searching for ?" << std::endl;
+                        carnet.aff();
+                        
+                }
 
-        std::cout << "trkl je tente :";
-        std::cout << "xdd " << std::endl;
-        std::cout << "okay ca donne ca";
-        std::cout << std::endl;
+        }
+        //carnet.ask_darkest();
+      
         return 0;
 }

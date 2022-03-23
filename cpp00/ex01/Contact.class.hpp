@@ -3,25 +3,24 @@
 #include <iostream>
 #include <string>
 #include <ctype.h>
-
+#include <iomanip>
+#include <sstream>
 
 
 class Contact
 {
 private:
-    std::string darkest_secret;
-    std::string firstname; 
-    std::string lastname;
-    std::string nickname;
-    std::string phonenumber;
+    std::string data[5];
+   /* darkest_secret;
+    firstname; 
+    lastname;
+    nickname;
+    phonenumber;*/
 public:
     Contact(/* args */);
     ~Contact();
-    void aff_fname(void) const;
-    void aff_lname(void) const;
-    void aff_nick(void) const;
-    void aff_numb(void) const;
-    void aff_darkest(void) const;
+    void   setit(std::string info, int index);
+    void    getit(int i);
 };
 
 
