@@ -18,6 +18,7 @@ class PhoneBook
     
         void    add();
         void    aff();
+        void    affone();
         PhoneBook();
         ~PhoneBook();
 };

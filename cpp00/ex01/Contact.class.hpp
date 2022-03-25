@@ -10,17 +10,15 @@
 class Contact
 {
 private:
-    std::string data[5];
-   /* darkest_secret;
-    firstname; 
-    lastname;
-    nickname;
-    phonenumber;*/
+    std::string data[6];
+
 public:
     Contact(/* args */);
     ~Contact();
     void   setit(std::string info, int index);
     void    getit(int i);
+    void    getdata();
+    void    unset(int i);
 };
 
 

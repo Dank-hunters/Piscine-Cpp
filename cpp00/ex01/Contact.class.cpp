@@ -4,7 +4,7 @@
 Contact::Contact(void)
 {
 
-        std::cout << "constructor called1" << std::endl;
+        std::cout << "constructor called" << std::endl;
         return;        
 }
 
@@ -37,6 +37,40 @@ void    Contact::getit(int i)
                 std::cout << std::setw(10) << this->data[i];
          }
 
+}
+
+void    Contact::unset(int i)
+{
+        while (i >= 0)
+        {
+                this->data[i].clear();
+                i--;
+        }
+
+}
+
+void    Contact::getdata()
+{
+        std::string tmp;
+
+        for (size_t i = 0; i < 6; i++)
+        {
+        if (i == 0)
+                std::cout << "FIRST NAME : ";
+        if (i == 1)
+                std::cout << "LAST NAME : ";
+        if (i == 2)
+         std::cout << "NICK NAME : ";
+        if (i == 3)
+                std::cout << "PHONE NUMBER : ";
+        if (i == 4)
+                std::cout << "DARKEST SECRET : ";
+        std::cout << this->data[i];
+        std::cout << std::endl;
+
+
+
+        }        
 }
 
 /*

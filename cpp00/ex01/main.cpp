@@ -1,10 +1,9 @@
 #include "Contact.class.hpp"
 #include "PhoneBook.class.hpp"
-int main(int ac, char **av)
+int main()
 {
         std::string input;
         PhoneBook carnet;
-        int index = 0;
       
         std::getline(std::cin, input);
         while(input != "EXIT")
@@ -15,16 +14,14 @@ int main(int ac, char **av)
                                 carnet.add();
                                 //index++;
                 }
-                std::getline(std::cin, input);
                 if (input == "SEARCH")
                 {
-                        //std::cout << "who are you searching for ?" << std::endl;
-                        carnet.aff();
-                        
+                        carnet.aff();        
+                        carnet.affone();
                 }
+                std::getline(std::cin, input);
 
         }
         //carnet.ask_darkest();
-      
         return 0;
 }
