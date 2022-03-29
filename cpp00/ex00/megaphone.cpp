@@ -16,7 +16,6 @@ int main(int ac, char **av)
                 c = toupper(av[i][u]);
                 std::cout << c;
             }
-        std::cout << " ";
         }
         std::cout << std::endl;
     }

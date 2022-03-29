@@ -22,22 +22,22 @@ void    PhoneBook::add()
 
     i = 0;
     std::string input;
-    std::cout << "give me your first name:";
+    std::cout << "give me your first name:" << std::endl;
     std::getline(std::cin, input);
     if (input.empty())
     {
-        std::cout << "The fields of a saved contact do not can be empty.";
+        std::cout << "The fields of a saved contact can't be empty.";
         return ;
     }
     pers[index].setit(input, i);
     i++;
 
 
-    std::cout << "give me your nick name:";
+    std::cout << "give me your nick name:" << std::endl;
     std::getline(std::cin, input);
      if (input.empty())
     {
-        std::cout << "The fields of a saved contact do not can be empty.";
+        std::cout << "The fields of a saved contact can't be empty.";
         pers[index].unset(i);
         return ;
     }
@@ -45,11 +45,11 @@ void    PhoneBook::add()
     i++;
 
 
-    std::cout << "give me your last name:";
+    std::cout << "give me your last name:" << std::endl;
     std::getline(std::cin, input);
      if (input.empty())
     {
-        std::cout << "The fields of a saved contact do not can be empty.";
+        std::cout << "The fields of a saved contact can't be empty.";
         pers[index].unset(i);
         return ;
     }  
@@ -57,7 +57,7 @@ void    PhoneBook::add()
     i++;
 
 
-    std::cout << "give me your number:";
+    std::cout << "give me your number:" << std::endl;
     std::getline(std::cin, input);
     std::string::const_iterator it = input.begin();
     while (it != input.end() && std::isdigit(*it))
@@ -72,7 +72,7 @@ void    PhoneBook::add()
      if (input.empty())
     {
 
-        std::cout << "The fields of a saved contact do not can be empty.";
+        std::cout << "The fields of a saved contact can't be empty.";
         pers[index].unset(i);
         return ;
     }
@@ -84,7 +84,7 @@ void    PhoneBook::add()
     std::getline(std::cin, input);
      if (input.empty())
     {
-        std::cout << "The fields of a saved contact do not can be empty.";
+        std::cout << "The fields of a saved contact can't be empty.";
         pers[index].unset(i);
         return ;
     }
@@ -101,14 +101,14 @@ void    PhoneBook::aff()
     int i = 0;
     int u = 0;
     std::cout << "____________________________________________" << std::endl;
-	std::cout << "     INDEX|First Name| Last Name|  Nick Name" << std::endl;
+	std::cout << "|    INDEX|First Name| Last Name| Nick Name|" << std::endl;
 	std::cout << "----------|----------|----------|-----------" << std::endl;
-    
-    while(i < 8)
+    while(i < index)
     {
         u = 0;
-        std::cout << "         " << i;
-                  std::cout << "|";
+    std::cout << "|";
+        std::cout << "        " << i;
+        std::cout << "|";
         while (u < 3)
         {
             pers[i].getit(u);
@@ -118,6 +118,7 @@ void    PhoneBook::aff()
         std::cout << std::endl;
         i++;
     }
+        std::cout << "___________________________________________" << std::endl << std::endl;
 }
 
 void    PhoneBook::affone()
@@ -133,7 +134,7 @@ void    PhoneBook::affone()
          ++it;
     if (it !=  input.end())
     {
-        std::cout << "need number for index" << std::endl;
+        std::cout << "please enter a valid number for index" << std::endl;
         pers[index].unset(i);
         return;
     }

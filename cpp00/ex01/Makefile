@@ -6,7 +6,7 @@ SRCS =	PhoneBook.class.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
-COM = clang++ -Wall -Wextra -Werror
+COM = c++ -Wall -Wextra -Werror -std=c++98
 	
 .cpp.o:
 	$(COM) -c $< -o $(<:.cpp=.o)
@@ -25,4 +25,4 @@ fclean: clean
 re: fclean all
 
 
-.PHONY: all clean fclean re .cpp.o test
+.PHONY: all clean fclean re .cpp.o teste

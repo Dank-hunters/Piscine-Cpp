@@ -4,7 +4,7 @@ SRCS = megaphone.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-COM = clang++ -Wall -Wextra -Werror
+COM = c++ -Wall -Wextra -Werror -std=c++98
 	
 .cpp.o:
 	$(COM) -c $< -o $(<:.cpp=.o)

@@ -11,7 +11,7 @@ Contact::Contact(void)
 
 Contact::~Contact(void)
 {
-        std::cout << "destructor called1" << std::endl;
+        std::cout << "destructor called" << std::endl;
         return;      
 }
 
@@ -26,11 +26,9 @@ void    Contact::getit(int i)
 
         if (this->data[i].size() > 10)
         {
-               // std::istringstream tmp(this->data[i]);
-                //tmp >> std::setw(10) >> news;
                 tmp = this->data[i];
-                tmp.resize(10);
-                std::cout << tmp;
+                tmp.resize(9);
+                std::cout << tmp << ".";
         }
         else 
          {      
@@ -56,15 +54,27 @@ void    Contact::getdata()
         for (size_t i = 0; i < 6; i++)
         {
         if (i == 0)
-                std::cout << "FIRST NAME : ";
+        {
+                std::cout << "FIRST NAME : " << std::endl;
+        }
         if (i == 1)
-                std::cout << "LAST NAME : ";
+        {
+                std::cout << "LAST NAME : " << std::endl;
+        }
+
         if (i == 2)
-         std::cout << "NICK NAME : ";
+        {
+         std::cout << "NICK NAME : "  << std::endl;
+        }
+
         if (i == 3)
-                std::cout << "PHONE NUMBER : ";
+        {
+                std::cout << "PHONE NUMBER : " << std::endl;
+        }
         if (i == 4)
-                std::cout << "DARKEST SECRET : ";
+        {
+                std::cout << "DARKEST SECRET : " << std::endl;
+        }
         std::cout << this->data[i];
         std::cout << std::endl;
 
@@ -72,13 +82,3 @@ void    Contact::getdata()
 
         }        
 }
-
-/*
-void    Contact::ask()
-{
-        std::string buf;
-        std::getline(std::cin, buf); 
-        this->darkest_secret = buf;
-        buf.clear();
-        return;
-}*/
