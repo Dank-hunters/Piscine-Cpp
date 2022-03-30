@@ -12,16 +12,14 @@ class HumanB
 {
 private:
     std::string name;
-    Weapon  Wep;
+    Weapon  *Wep;
     
 public:
-    HumanB(/* args */);
+    HumanB(std::string);
     ~HumanB();
     std::string     getName();
-    void            setName(std::string);
-    void            setWeapon(std::string);
+    void            setWeapon(Weapon &neww);
     void            attack();
 };
 
-HumanB    initSoldierB(std::string weapon, std::string name);
 #endif

@@ -1,9 +1,7 @@
-NAME = Field
-
+NAME = Replace
 SRCS =  main.cpp \
-		Weapon.cpp \
-		HumanA.cpp \
-		HumanB.cpp
+		cut.cpp
+		
 
 OBJS = $(SRCS:.cpp=.o)
 

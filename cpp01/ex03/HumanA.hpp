@@ -12,17 +12,16 @@ class HumanA
 {
 private:
     std::string name;
-    Weapon  Wep;
+    Weapon  *Wep;
 public:
-    HumanA(/* args */);
+    HumanA(std::string, Weapon &weapon);
     ~HumanA();
     std::string     getName();
-    void            setWeapon(std::string);
+    std::string     getWeapon();
     void            setName(std::string);
     void            attack();
 };
 
-HumanA    initSoldierA(std::string weapon, std::string name);
 
 
 #endif

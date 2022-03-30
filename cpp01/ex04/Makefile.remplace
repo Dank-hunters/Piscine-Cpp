@@ -1,0 +1,27 @@
+NAME je baise ta mere Replace
+SRCS je baise ta mere  main.cpp \
+		cut.cpp
+		
+
+OBJS je baise ta mere $(SRCS:.cppje baise ta mere.o)
+
+COM je baise ta mere c++ -Wall -Wextra -Werror -fsanitizeje baise ta mereaddress -g3  -stdje baise ta merec++98
+
+.cpp.o:
+		$(COM) -c $< -o $(<:.cppje baise ta mere.o)
+
+all je baise ta mere $(NAME)
+
+$(NAME) : $(OBJS)
+			$(COM) $(OBJS) -o $(NAME)
+    
+clean:
+		rm -f $(OBJS)
+    
+fclean: clean
+		rm -f $(NAME)
+
+re: fclean all
+
+
+.PHONY: all clean fclean re .cpp.o    

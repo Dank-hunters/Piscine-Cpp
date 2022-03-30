@@ -1,15 +1,15 @@
 #include "HumanA.hpp"
 
 
-HumanA::HumanA(/* args */)
+HumanA::HumanA(std::string name, Weapon &wep): name(name), Wep(&wep)
 {
- std::cout << "HumanA : constructor called" << std::endl;
+    std::cout << "HumanA : constructor called" << std::endl;
     return;
 }
 
 HumanA::~HumanA()
 {
-    std::cout << "HumanA : destructor called" << std::endl;
+    std::cout << this->name << ": HumanA : destructor called" << std::endl;
     return;
 }
 
@@ -26,19 +26,11 @@ std::string    HumanA::getName()
 
 void        HumanA::attack()
 {
-    std::cout << getName() << " attack with their " << this->Wep.getType() << std::endl;
+    std::cout << getName() << " attack with their " << this->Wep->getType() << std::endl;
 
 }
 
-void            HumanA::setWeapon(std::string wep)
+std::string        HumanA::getWeapon()
 {
-    this->Wep.setType(wep);
-}
-
-HumanA   initSoldierA(std::string weapon, std::string name)
-{
-    HumanA Soldier;
-    Soldier.setWeapon(weapon);
-    Soldier.setName(name);
-    return (Soldier);
+    return (this->Wep->getType());
 }

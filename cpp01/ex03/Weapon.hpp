@@ -13,11 +13,11 @@ class Weapon
     private:
            std::string Type;
     public:
-        Weapon(/* args */);
+        Weapon(std::string);
         ~Weapon();
 
-        std::string    getType();
-        void    setType(std::string);
+        std::string    &getType();
+        void    setType(std::string );
 
 };
 

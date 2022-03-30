@@ -1,24 +1,26 @@
 #include "Weapon.hpp"
 
 
-Weapon::Weapon(/* args */)
+Weapon::Weapon(std::string type): Type(type)
 {
-  //  std::cout << "constructor called" << std::endl;
+    std::cout << "Weapon constructor called" << std::endl;
     return;
 }
 
 Weapon::~Weapon()
 {
-    //std::cout << "destructor called" << std::endl;
+    std::cout << "destructor called" << std::endl;
     return;
 }
 
 void    Weapon::setType(std::string input)
 {
+    if (input == "")
+        this->Type = "No Type set for this Human";
     this->Type = input;
 }
 
-std::string    Weapon::getType()
+std::string    &Weapon::getType()
 {
     return (this->Type);
 }
