@@ -2,15 +2,29 @@
 
 Harl::Harl(/* args */)
 {
-    this->levels[0] = "DEBUG";
-    this->levels[1] = "INFO";
-    this->levels[2] = "WARNING";
-    this->levels[3] = "ERROR";
-    this->func[0] = &debug;
-    this->func[1] = &info;
-    this->func[2] = &warning;
-    this->func[3] = &error;
-    }
+}
+
+std::string     Harl::complain_lvl[4] = {
+    "DEBUG",
+    "INFO",
+    "WARNING",
+    "ERROR",
+};
+/*
+void    (Harl::*complain_fct[4])(void) = 
+{
+&Harl::debug,
+&Harl::info,
+&Harl::warning,
+&Harl::error,
+};*/
+
+void    (Harl::*(Harl::complain_fct)[])(void) = {
+&Harl::debug,
+&Harl::info,
+&Harl::warning,
+&Harl::error
+};
 
 Harl::~Harl()
 {
@@ -20,6 +34,7 @@ Harl::~Harl()
         {
             std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
             return;
+
         }
         void Harl::info( void )        {
             std::cout << "I cannot believe adding extra bacon costs more money. You didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl;
@@ -34,11 +49,11 @@ Harl::~Harl()
             return;
         }
         
-        void complain( std::string level )
+        void Harl::complain( std::string level )
         {
             for (size_t i = 0; i < 4; i++)
             {
-                level.compare(this->levels[i])
-                (this->*func[i])();
+                if (complain_lvl[i] == level)
+                    (this->*complain_fct[i])();
             }
         }

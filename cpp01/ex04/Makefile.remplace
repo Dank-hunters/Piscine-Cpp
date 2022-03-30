@@ -1,16 +1,16 @@
-NAME je baise ta mere Replace
-SRCS je baise ta mere  main.cpp \
+NAME = Replace
+SRblouuuu =  main.cpp \
 		cut.cpp
 		
 
-OBJS je baise ta mere $(SRCS:.cppje baise ta mere.o)
+OBJS = $(SRblouuuu:.cpp=.o)
 
-COM je baise ta mere c++ -Wall -Wextra -Werror -fsanitizeje baise ta mereaddress -g3  -stdje baise ta merec++98
+COM = c++ -Wall -Wextra -Werror -fsanitize=address -g3  -std=c++98
 
 .cpp.o:
-		$(COM) -c $< -o $(<:.cppje baise ta mere.o)
+		$(COM) -c $< -o $(<:.cpp=.o)
 
-all je baise ta mere $(NAME)
+all = $(NAME)
 
 $(NAME) : $(OBJS)
 			$(COM) $(OBJS) -o $(NAME)

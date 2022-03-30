@@ -1,7 +1,7 @@
 NAME = Field
 
 SRCS =  main.cpp \
-
+		Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 COM = c++ -Wall -Wextra -Werror -fsanitize=address -g3  -std=c++98
