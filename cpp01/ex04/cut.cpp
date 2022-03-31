@@ -10,6 +10,7 @@ std::string    cut(std::string to_compare, std::string to_replace, std::string r
 		{
             to_compare.erase(pos, len);
             to_compare.insert(pos, replacement);
+            pos += len + 1;
         }
 
     }

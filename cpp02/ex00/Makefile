@@ -1,9 +1,8 @@
-NAME = Replace
-SRblouuuu =  main.cpp \
-		cut.cpp
-		
+NAME = Fixed
 
-OBJS = $(SRblouuuu:.cpp=.o)
+SRCS =  main.cpp \
+		Fixed.cpp
+OBJS = $(SRCS:.cpp=.o)
 
 COM = c++ -Wall -Wextra -Werror -fsanitize=address -g3  -std=c++98
 

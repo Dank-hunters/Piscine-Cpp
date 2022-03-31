@@ -20,7 +20,7 @@ void    Weapon::setType(std::string input)
     this->Type = input;
 }
 
-std::string    &Weapon::getType()
+const std::string    &Weapon::getType()
 {
     return (this->Type);
 }

@@ -1,7 +1,7 @@
-NAME = Harl
+NAME = Fixed
 
 SRCS =  main.cpp \
-		Harl.cpp
+		Fixed.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 COM = c++ -Wall -Wextra -Werror -fsanitize=address -g3  -std=c++98

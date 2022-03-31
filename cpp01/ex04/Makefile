@@ -1,4 +1,5 @@
 NAME = Replace
+
 SRCS =  main.cpp \
 		cut.cpp
 		
@@ -18,10 +19,9 @@ $(NAME) : $(OBJS)
 clean:
 		rm -f $(OBJS)
     
-fclean: clean
-		rm -f $(NAME)
+fclean :	clean
+			rm -f $(NAME)
 
-re: fclean all
-
+re:		fclean all
 
 .PHONY: all clean fclean re .cpp.o    

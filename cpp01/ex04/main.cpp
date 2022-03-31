@@ -4,7 +4,6 @@ std::string    cut(std::string s1, std::string s2, std::string s3);
 
 int main(int ac, char **av)
 {
-    std::cout << av[1] << "|" << std::endl;
     std::string s1;
     std::string s2;
     if (ac != 4)
@@ -14,12 +13,12 @@ int main(int ac, char **av)
     }
     std::string filename = av[1];
     if (filename == "")
-        std::cout << "filename unknow";
+      std::cout << "filename unknow";
     std::ifstream   iFs(av[1]);
     if (iFs.is_open() == false)
     {
         iFs.close();
-        std::cout << filename << " : wrong filename" << std::endl;
+        std::cout << filename << " : wrong filename or wrong acces" << std::endl;
         return(1);
     }
 
