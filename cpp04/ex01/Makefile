@@ -1,11 +1,13 @@
-NAME = Fixed
+NAME = Animal
 
 SRCS =  main.cpp \
-		Fixed.cpp
+		Animal.cpp \
+		Cat.cpp \
+		Dog.cpp \
+		Brain.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-COM = c++ -Wall -Wextra -Werror -fsanitize=address -g3  -std=c++98
-
+COM = c++ -Wall -Wextra -Werror  -std=c++98 
 .cpp.o:
 		$(COM) -c $< -o $(<:.cpp=.o)
 

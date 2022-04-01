@@ -1,7 +1,8 @@
-NAME = Fixed
+NAME = Clappy
 
 SRCS =  main.cpp \
-		Fixed.cpp
+		ClapTrap.cpp \
+		FragTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 COM = c++ -Wall -Wextra -Werror -fsanitize=address -g3  -std=c++98
