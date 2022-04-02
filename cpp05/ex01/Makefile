@@ -1,11 +1,12 @@
-NAME = Fixed
+NAME = Office
 
 SRCS =  main.cpp \
-		Fixed.cpp
+		Bureaucrate.cpp \
+		Form.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
-COM = c++ -Wall -Wextra -Werror -fsanitize=address -g3  -std=c++98
-
+COM = c++ -Wall -Wextra -Werror  -std=c++98 
 .cpp.o:
 		$(COM) -c $< -o $(<:.cpp=.o)
 
