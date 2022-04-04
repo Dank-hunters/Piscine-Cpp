@@ -1,46 +1,82 @@
 #include <iostream>
 #include <stdexcept>
 #include "Bureaucrate.hpp"
-#include "Form.hpp"
+//#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+
 
 int main(void) {
 
-	Bureaucrate Joel("Joel", 5);
-	Form*	test;
+	Bureaucrat Joel("Joel", 1);
+	AForm*	test;
 
-	try{
-		test = new Form("test", 151, 151);}
-	catch(const std::exception& e){
-		std::cerr << e.what() << '\n';}
-	try{
-		test = new Form("test", 0, 0);}
-	catch(const std::exception& e){
-		std::cerr << e.what() << '\n';}
-	try{
-		test = new Form("test", 4, 8);}
-	catch(const std::exception& e){
-		std::cerr << e.what() << '\n';}
+	for (int i = 0; i < 3; i++)
+	{
+		if (i == 0){
+			std::cout << "---------------------------------------------------------------------" << std::endl
+				<< "PresidentialPardonForm :" << std::endl;
+			test = new PresidentialPardonForm("President");
+		}
+		else if (i == 1){
+			std::cout << "---------------------------------------------------------------------" << std::endl
+				<< "RobotomyRequestForm :" << std::endl;
+			test = new RobotomyRequestForm("Robot");
+		}
+		else{
+			std::cout << "---------------------------------------------------------------------" << std::endl
+				<< "ShrubberyCreationForm :" << std::endl;
+			test = new ShrubberyCreationForm("Tree");
+		}
 
-	std::cout << *test << std::endl;
+		Joel = Bureaucrat("Joel", test->getGradeToSign() + 1);
 
-	Joel.signForm(*test);
-	try{
-	test->beSigned(Joel);}
-	catch(const std::exception& e){
-		std::cerr << e.what() << '\n';}
+		for (int j = 0; j < 2; j++)
+		{
 
-	std::cout << *test << std::endl;
+			std::cout << std::endl << std::endl << *test << Joel << std::endl << std::endl;
 
-	Joel.upGrade();
+			Joel.signForm(*test);
+			try
+			{
+				test->beSigned(Joel);
+			}
+			catch(const std::exception & e)
+			{
+				std::cerr << e.what() << std::endl;
+			}
 
-	Joel.signForm(*test);
-	try{
-	test->beSigned(Joel);}
-	catch(const std::exception& e){
-		std::cerr << e.what() << '\n';}
+			Joel.execForm(*test);
+			try
+			{
+				test->execute(Joel);
+			}
+			catch(const std::exception & e)
+			{
+				std::cerr << e.what() << std::endl;
+			}
 
-	std::cout << *test << std::endl;
+			Joel.upGrade();
 
-	delete test;
+		}
+		Joel = Bureaucrat("Joel", test->getGradeToExecute());
+		
+		std::cout << std::endl << std::endl << *test << Joel << std::endl << std::endl;
+
+		Joel.execForm(*test);
+		try
+		{
+			test->execute(Joel);
+		}
+		catch(const std::exception & e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+
+		delete test;
+	}
+
 	return 0;
+
 }

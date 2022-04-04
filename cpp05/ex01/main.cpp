@@ -28,7 +28,6 @@ int main(void) {
 	test->beSigned(Joel);}
 	catch(const std::exception& e){
 		std::cerr << e.what() << '\n';}
-
 	std::cout << *test << std::endl;
 
 	Joel.upGrade();

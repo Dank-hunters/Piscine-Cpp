@@ -76,12 +76,20 @@ int   Fixed::operator!=(Fixed const & rhs)const{
 //                  operator +-*/
 
 Fixed  Fixed::operator+(Fixed const & rhs)const{
-    return (this->getRawBits() + rhs.getRawBits());
+
+	Fixed	copy = Fixed(*this);
+
+	copy.value = this->value + rhs.getRawBits();
+	return copy;
+
+   // return (this->getRawBits() + rhs.getRawBits());
 
 }                                      
 Fixed   Fixed::operator-(Fixed const & rhs)const{
-    return(this->getRawBits() - rhs.getRawBits());
+	Fixed	copy = Fixed(*this);
 
+	copy.value = this->value - rhs.getRawBits();
+	return copy;
 }                                      
 Fixed   Fixed::operator*(Fixed const & rhs)const{
     
@@ -104,17 +112,17 @@ Fixed &  Fixed::operator--(void)
 
 }               
 
-Fixed  Fixed::operator--(int i)             
+Fixed  Fixed::operator--(int)             
 {
-    Fixed tmp(i);
-    this->value--;
-    return(*this);
+  Fixed tmp = *this;
+    --(*this);
+    return(tmp);
 }
-Fixed  Fixed::operator++(int i)           
+Fixed  Fixed::operator++(int)           
 {
-    Fixed tmp(i);
-    this->value++;
-    return(*this);
+    Fixed tmp = *this;
+    ++(*this);
+    return(tmp);
 }
 //          operator min max
 
@@ -129,9 +137,9 @@ Fixed & Fixed::max(Fixed & a, Fixed & b){
     return(b);
 }
 const Fixed & Fixed::min(const Fixed & a, const Fixed & b){
-    if (a < b)
-        return (a);
-    return(b);
+    if (a > b)
+        return (b);
+    return(a);
 }
 const Fixed & Fixed::max(const Fixed & a, const Fixed & b){
     if (a > b)
