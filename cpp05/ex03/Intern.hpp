@@ -8,11 +8,9 @@ public:
 
     Intern(/* args */);
     virtual ~Intern();
-    
-\
 
     //AForm *    (Intern::*_Make[3])(void) ;
-    AForm *  MakeForm(std::string const FormName, std::string const FormTarget);
+    AForm *  makeForm(std::string const & FormName, std::string const & FormTarget);
 
 private:
     Intern(Intern const & src);

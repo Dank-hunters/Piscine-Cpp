@@ -23,19 +23,14 @@ this->AForm::operator=(rhs);
 
 void	RobotomyRequestForm::execute(Bureaucrat const & exec) const
 {
-	if (this->getSignature() == false)
-		throw (UnsignedFormException());
-	else if (this->getGradeToExecute() < exec.getGrade())
-		throw (GradeTooLowException());
-	else 
-	{
+	AForm::execute(exec);
+
 	std::srand(std::time(nullptr));
 	std::cout << "* Some drilling noises *" << std::endl << "<" << this->getTarget() << ">";
 	if (std::rand() % 2)
 		std::cout << " has been robotomized successfully" << std::endl;
 	else
 		std::cout << "'s robotomy failed" << std::endl;
-	}
 	return ;
 
 }

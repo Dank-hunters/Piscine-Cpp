@@ -5,11 +5,11 @@
 
 Intern::Intern(void)
 {
-	this->_type[0] = "PresidentialPardonForm";
+	this->_type[0] = "presidential pardon";
 	this->_Make[0] = &Intern::MakePresidentialPardon;
-	this->_type[1] = "RobotomyRequestForm";
+	this->_type[1] = "robotomy request";
 	this->_Make[1] = &Intern::MakeRobotomyRequest;
-	this->_type[2] = "ShrubberyCreationForm";
+	this->_type[2] = "shrubbery creation";
 	this->_Make[2] = &Intern::MakeShruberyCreation;
 }
 
@@ -19,21 +19,18 @@ Intern::~Intern()
 }
 
 
-AForm   *Intern::MakeForm(std::string name, std::string target)
+AForm*  Intern::makeForm(std::string const & name, std::string const & target)
 {
     for (size_t i = 0; i < 3; i++)
     {
-        if (this->_type[i] == name)
+        if (this->_type[i].compare(name) == 0)
         {
             std::cout << "Inern create " << this->_type[i] << std::endl;
-            return (this->*_Make[i])(target);
+            return ((this->*_Make[i])(target));
         }
     }
     std::cout << "Intern can't create " << name << " it's not a know Form" << std::endl;
     return (NULL);
-    
-    /*AForm(target, name);
-    return (AForm);*/
 }
 
 AForm*   Intern::MakePresidentialPardon(std::string const & target)

@@ -27,7 +27,7 @@ std::string     ClapTrap::getName() const
 }
 ClapTrap  &  ClapTrap::operator=(ClapTrap const & rhs) 
 {
-   // std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Copy assignment claptrap operator called" << std::endl;
     if (this != &rhs)
         this->Name = rhs.getName();
     return *this;

@@ -21,10 +21,10 @@ public:
         std::string     getName() const;
 
         ClapTrap(ClapTrap const & src);                                         //constructeur copy                 forme canonique
-    ClapTrap &  operator=(ClapTrap const & rhs);                      //operateur d assignation
-    ClapTrap();
-    ClapTrap(std::string);
-    ~ClapTrap();
+        ClapTrap &  operator=(ClapTrap const & rhs);                      //operateur d assignation
+        ClapTrap();
+        ClapTrap(std::string);
+        ~ClapTrap();
 };
 
 

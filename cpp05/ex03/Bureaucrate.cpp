@@ -73,7 +73,6 @@ std::ostream &	operator<<(std::ostream & o, Bureaucrat const & rhs){
 }
 
 void	Bureaucrat::signForm(AForm & form){
-
 	try{
 		form.beSigned(*this);
 		std::cout << "<" << this->Name << "> signs <" << form.getName() << ">" << std::endl;
@@ -89,13 +88,7 @@ void	Bureaucrat::signForm(AForm & form){
 void					Bureaucrat::execForm(AForm &form){
 	try 
 	{
-		//form.execute(*this);
-	if (form.getSignature() == false)
-		throw (UnsignedFormException());
-	else if (form.getGradeToExecute() < this->getGrade())
-	{
-		throw (GradeTooLowExep());
-	}else
+		form.execute(*this);
 			std::cout << Name << " exec " << form.getName() << std::endl;
 	}
 	catch (std::exception & e)

@@ -24,11 +24,12 @@ PresidentialPardonForm &	PresidentialPardonForm::operator=(PresidentialPardonFor
 
 void    PresidentialPardonForm::execute(Bureaucrat const & exec) const
 {
-    if (this->getSignature() == false)
-		throw (UnsignedFormException());
+	AForm::execute(exec);
+  /* if (this->getSignature() == false)
+		throw (UnsignedFormExep());
 	else if (this->getGradeToExecute() < exec.getGrade())
-		throw (GradeTooLowException());
-    else 
+		throw (GradeTooLowExep());
+    else */
 		std::cout << "<" << this->getTarget() << "> has been pardoned by Zafod Beeblebrox" << std::endl;
 	return ;
 }

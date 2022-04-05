@@ -19,7 +19,7 @@ public:
 
         ClapTrap(ClapTrap const & src);                                         //constructeur copy                 forme canonique
         ClapTrap &  operator=(ClapTrap const & rhs);                      //operateur d assignation
-        ClapTrap(std::string);
+        ClapTrap(std::string);                                                  // contructeur par default
         ~ClapTrap();
 };
 

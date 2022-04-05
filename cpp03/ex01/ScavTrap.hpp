@@ -7,10 +7,11 @@
 class ScavTrap : public ClapTrap
 {
     private:
-   public:
+        /*void*/
+    public:
     
-        void attack(const std::string& target);
-        void guardGate() const;
+    void attack(const std::string& target);
+    void guardGate() const;
     
     ScavTrap(ScavTrap const & src);                                         //constructeur par copy                
     ScavTrap &  operator=(ScavTrap const & rhs);                      //operateur d assignation      forme canonique

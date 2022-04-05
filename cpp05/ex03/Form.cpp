@@ -12,9 +12,9 @@ AForm::~AForm()
 AForm::AForm(std::string const &target, std::string const & name, int sign, int exec) : _target(target), _Name(name),  _Signe(false), grade_S(sign), grade_E(exec)
 {
 	if (this->grade_S <= 0 || this->grade_E <= 0)
-		throw (GradeTooHighException());
+		throw (GradeTooHighExep());
 	if (this->grade_S > 150 || this->grade_E > 150)
-		throw (GradeTooLowException());
+		throw (GradeTooLowExep());
 }
 
 AForm  &  AForm::operator=(AForm const & rhs) 
@@ -50,7 +50,7 @@ bool	AForm::getSignature(void) const{
 void	AForm::beSigned(Bureaucrat const & bureaucrate){
 
 	if (bureaucrate.getGrade() > this->grade_S)
-		throw (GradeTooLowException());
+		throw (GradeTooLowExep());
 	else 
 		this->_Signe = true;
 	return ;
@@ -59,9 +59,9 @@ void	AForm::beSigned(Bureaucrat const & bureaucrate){
 void	AForm::execute(Bureaucrat const & execute) const
 {
 	if (this->_Signe == false)
-		throw (UnsignedFormException());
+		throw (UnsignedFormExep());
 	if (this->grade_E < execute.getGrade())
-		throw (GradeTooLowException());
+		throw (GradeTooLowExep());
 	return ;
 }
 std::string	AForm::getTarget(void) const{

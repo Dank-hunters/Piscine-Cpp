@@ -29,19 +29,19 @@ public:
 	virtual void	execute(Bureaucrat const & executor) const = 0;
     
 	
-	class 	GradeTooHighException : public std::exception{
+	class 	GradeTooHighExep : public std::exception{
 	public:
 		virtual const char *	what() const throw(){
 			return ("Grade too high");
 		}
 	};
-	class GradeTooLowException : public std::exception{
+	class GradeTooLowExep : public std::exception{
 	public:
 		virtual const char *	what() const throw(){
 			return ("Grade too low");
 		}
 	};
-	class UnsignedFormException : public std::exception{
+	class UnsignedFormExep : public std::exception{
 	public:
 		virtual const char *	what() const throw(){
 			return ("Unsigned form");

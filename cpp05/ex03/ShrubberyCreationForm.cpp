@@ -24,12 +24,8 @@ ShrubberyCreationForm &	ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & exec) const{
 
-	if (this->getSignature() == false)
-		throw (UnsignedFormException());
-	else if (this->getGradeToExecute() < exec.getGrade())
-		throw (GradeTooLowException());
-    else 
-	{
+	AForm::execute(exec);
+
 	std::string		tmp(this->getTarget() + "_shrubbery");
 	std::ofstream	oFs(tmp.c_str());
 
@@ -57,6 +53,5 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & exec) const{
 	<< std::endl;
 
 	oFs.close();
-	}
 	return ;
 }

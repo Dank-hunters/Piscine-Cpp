@@ -1,5 +1,5 @@
 #include "Fixed.hpp"
-Fixed::Fixed(/* args */): value(0)
+Fixed::Fixed(): value(0)
 {
     //std::cout << "Default constructor called" << std::endl;
 }
@@ -82,7 +82,6 @@ Fixed  Fixed::operator+(Fixed const & rhs)const{
 	copy.value = this->value + rhs.getRawBits();
 	return copy;
 
-   // return (this->getRawBits() + rhs.getRawBits());
 
 }                                      
 Fixed   Fixed::operator-(Fixed const & rhs)const{
@@ -94,7 +93,8 @@ Fixed   Fixed::operator-(Fixed const & rhs)const{
 Fixed   Fixed::operator*(Fixed const & rhs)const{
     
 return(this->toFloat() * rhs.toFloat());
-}                                      
+}      
+
 Fixed  Fixed::operator/(Fixed const & rhs)const{
     return(this->toFloat() / rhs.toFloat());
 }                              
@@ -109,7 +109,6 @@ Fixed &  Fixed::operator--(void)
 {
     this->value--;
     return(*this);
-
 }               
 
 Fixed  Fixed::operator--(int)             

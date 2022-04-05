@@ -16,11 +16,13 @@ ScavTrap::~ScavTrap()
 }
 ScavTrap  &  ScavTrap::operator=(ScavTrap const & rhs) 
 {
-   // std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Copy assignment Scavtrap operator called" << std::endl;
     if (this != &rhs)
         this->Name = rhs.getName();
     return *this;
 }
+
+
 void    ScavTrap::attack(const std::string& target){
     if (this->energy_P == 0)
         std::cout << this->Name << " can't attack, he have to sleep sorry !" << std::endl;
